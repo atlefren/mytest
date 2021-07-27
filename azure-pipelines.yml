@@ -1,0 +1,8 @@
+trigger:
+  - master
+pool:
+  name: Default
+steps:
+  - task: PowerShell@2
+    inputs:
+        filePath: script.ps
