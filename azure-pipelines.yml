@@ -76,13 +76,13 @@ stages:
               artifact: norkartidjs
 
             - task: Npm@1
+              displayName: 'npm publish'
               inputs:
-                displayName: 'npm publish'
                 command: publish
                 verbose: true
                 workingDir: $(Pipeline.Workspace)\norkartidjs
                 publishRegistry: UseExternalRegistry
-                publishEndpoint: 'npmRegistryAtle'
+                publishEndpoint: npmRegistryAtle
 
 
 
