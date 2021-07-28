@@ -79,6 +79,7 @@ stages:
               inputs:
                 displayName: 'npm publish'
                 command: publish
+                verbose: true
                 workingDir: $(Pipeline.Workspace)\norkartidjs
                 publishRegistry: UseExternalRegistry
                 publishEndpoint: 'npmRegistryAtle'
