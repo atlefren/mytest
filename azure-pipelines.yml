@@ -6,3 +6,5 @@ steps:
   - task: PowerShell@2
     inputs:
       filePath: script.ps1
+    env:
+      GITHUBPAT: $(GitHubPat)
