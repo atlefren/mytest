@@ -79,9 +79,8 @@ stages:
               displayName: 'npm publish'
               inputs:
                 command: publish
-                verbose: true
-                workingDir: $(Pipeline.Workspace)\norkartidjs
-                publishRegistry: UseExternalRegistry
+                workingDir: '$(System.DefaultWorkingDirectory)/_test/norkartidjs'
+                verbose: false
                 publishEndpoint: npmRegistryAtle
 
 
