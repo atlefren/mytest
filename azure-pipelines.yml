@@ -63,23 +63,23 @@ stages:
           - publish: $(Build.ArtifactStagingDirectory)
             artifact: norkartidjs
 
-- stage: ReleaseNPM
-  condition: and(succeeded(), eq(variables.isMasterBranch, true))
+  - stage: ReleaseNPM
+    condition: and(succeeded(), eq(variables.isMasterBranch, true))
 
-  jobs:
-      - job: ReleaseNPM
-        workspace:
-          clean: all
+    jobs:
+        - job: ReleaseNPM
+          workspace:
+            clean: all
 
-        steps:
-          - download: current
-            artifact: norkartidjs
+          steps:
+            - download: current
+              artifact: norkartidjs
 
-          - task: Npm@1
-            inputs:
-              command: publish
-              publishRegistry: Norkart
-              workingDir: '$(Pipeline.Workspace)\**\norkartidjs'
+            - task: Npm@1
+              inputs:
+                command: publish
+                publishRegistry: Norkart
+                workingDir: '$(Pipeline.Workspace)\**\norkartidjs'
 
 
 
