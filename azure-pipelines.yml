@@ -75,7 +75,7 @@ stages:
             - download: current
               artifact: norkartidjs
 
-              - task: Npm@1
+            - task: Npm@1
               inputs:
                 displayName: 'npm publish'
                 command: publish
