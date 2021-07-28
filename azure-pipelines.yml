@@ -87,7 +87,5 @@ stages:
               displayName: 'Copy source to GitHub'
               inputs:
                 filePath: script.ps1
-                env:
-                  GITHUBPAT: $(GitHubPat)
-
-
+              env:
+                GITHUBPATH: $(GitHubPat)
