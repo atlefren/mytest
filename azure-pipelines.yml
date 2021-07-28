@@ -80,7 +80,7 @@ stages:
               displayName: 'npm publish'
               inputs:
                 command: publish
-                workingDir: $(Pipeline.Workspace)/**/norkartidjs
+                workingDir: $(Pipeline.Workspace)\norkartidjs
                 verbose: true
                 publishRegistry: useFeed
                 publishFeed: 'd12c59b3-baf6-48ef-9f80-ca77e13f54d8' #this is the id of the Norkart feed
