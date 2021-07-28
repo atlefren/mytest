@@ -1,0 +1,67 @@
+{
+  "name": "testgitmove",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch --env=jsdom",
+    "test:ci": "jest --env=jsdom --ci --reporters=default --reporters=jest-junit --coverage",
+    "coverage": "jest --env=jsdom --coverage",
+    "build:test": "jest --env=jsdom",
+    "build:clean": "rimraf build",
+    "build": "npm run build:clean && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@ssh.dev.azure.com:v3/norkart-tfs/Atles%20playground/test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@types/jest": "^26.0.24",
+    "babel-jest": "^27.0.6",
+    "jest": "^27.0.6",
+    "jest-junit": "^12.2.0",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5"
+  },
+  "jest": {
+    "coverageReporters": [
+      "cobertura",
+      "html"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "!src/Authentication/adal.js",
+      "!/node_modules/"
+    ],
+    "setupFiles": [
+      
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/build/"
+    ]
+  },
+  "jest-junit": {
+    "suiteName": "jest tests",
+    "output": "test/junit.xml",
+    "classNameTemplate": "{classname} - {title}",
+    "titleTemplate": "{classname} - {title}",
+    "ancestorSeparator": " > ",
+    "usePathForSuiteName": "true"
+  }
+}
