@@ -79,7 +79,6 @@ stages:
               inputs:
                 command: publish
                 publishRegistry: Norkart
-                workingDir: '$(Pipeline.Workspace)\**\norkartidjs'
 
 
 
