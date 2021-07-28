@@ -1,4 +1,4 @@
-$GhPAT = "$(GitHubPat)"
+$GhPAT = ${env:GITHUBPAT}
 
 echo $GhPAT
 
