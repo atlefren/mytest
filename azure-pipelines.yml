@@ -83,13 +83,11 @@ stages:
                 verbose: false
                 publishEndpoint: npmRegistryAtle
 
+            - task: PowerShell@2
+              displayName: 'Copy source to GitHub'
+              inputs:
+                filePath: script.ps1
+                env:
+                  GITHUBPAT: $(GitHubPat)
 
 
-
-
-#steps:
-#  - task: PowerShell@2
-#    inputs:
-#      filePath: script.ps1
-#    env:
-#      GITHUBPAT: $(GitHubPat)
